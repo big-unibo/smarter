@@ -1,4 +1,4 @@
-# Prescriptive Smart Watering: Automatic Optimization1 of Water Consumption and Fruit Quality in Orchards
+# Prescriptive Smart Watering: Automatic Optimization of Water Consumption and Fruit Quality in Orchards
 
 ## Research papers
 
