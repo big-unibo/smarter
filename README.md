@@ -16,7 +16,7 @@ The repository contains data and the processing pipeline to derive figures and s
 - PID_Tuning.ipynb: Python data pipeline to reproduce the article's figures related to tuning Kp and Ki PID parameters on different soil textures
 
 ## Reproduce Experiments
-The experiments need Python to run and some additional dependencies that can be found in `requirements.txt` file. There are two different ways to reproduce experiments.
+The experiments need Python > 3 to run and some additional dependencies that can be found in `requirements.txt` file. There are two different ways to reproduce experiments.
 
 ### Shell
 Dependencies can be installed via opening a shell within this repository's folder and running
@@ -28,6 +28,9 @@ The experiments can then be run via opening the notebook itself or via running:
   jupyter nbconvert --to notebook --execute CSAG_smart_irrigation.ipynb --output results/CSAG_smart_irrigation_results.ipynb
   jupyter nbconvert --to notebook --execute PID_Tuning.ipynb --output results/PID_Tuning.ipynb
 ```
+
+Alternatively, once the mandatory dependencies have been installed, notebooks can be run via a standard IDE (e.g., Visual Studio Code)
+
 ### Docker (.devcontainer)
 Opening the repository folder within an IDE (e.g., Visual Studio Code), it is possible to run the .devcontainer with all the mandatory libraries installed.
 The two notebooks can the be run via IDE, or running the above shell commands within the container
