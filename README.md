@@ -9,8 +9,8 @@ This repository contains the implementation of the following research paper:
 ## Repository Description
 The repository contains data and the processing pipeline to derive figures and statistics in the above research paper.
 #### Data
-- `/data/field_data`: sensor data extracted for evaluating SMARTER.
-- `/data/tuning`: synthetic data obtained through running Auto-ML simulations on (https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)[CRITERIA-2D]. The data within this folder was leveraged in determining starting values for Kp, Ki in different soil textures.
+- `data/field_data`: sensor data extracted for evaluating SMARTER.
+- `data/tuning`: synthetic data obtained through running Auto-ML simulations on (https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)[CRITERIA-2D]. The data within this folder was leveraged in determining starting values for Kp, Ki in different soil textures.
 #### Data processing pipelines
 - `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures from raw field data.
 - `processing/PID_Tuning.ipynb: Python data pipeline` to reproduce the article's figures related to tuning Kp and Ki PID parameters on different soil textures.
