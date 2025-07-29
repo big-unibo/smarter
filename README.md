@@ -11,7 +11,7 @@ The repository contains data and the processing pipeline to derive figures and s
 #### Data
 
 - `data/field_data`: sensor data collected during the irrigation seasons.
-- `data/tuning`: synthetic data obtained through running Auto-ML simulations on CRITERIA-2D [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
+- `data/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
 
 #### Data processing pipelines
 
