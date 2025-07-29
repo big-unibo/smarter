@@ -32,7 +32,7 @@ Experiments for reference values for KP and KP parameters within different soil 
 The Criteria2D repository and experiments setup have been packed in a Docker image runnable within this repository by opening a shell on this project root directory and running:
 
 ```sh
-  docker compose up
+docker compose up
 ```
 
 Simulation results for each scenario will be available in the `data/experiments_data/{scenario}/output` folder. Finally, to visualize such results, open the `processing/PID_Tuning.ipynb` notebook and change the value of the VISUALIZE_EXPERIMENTS variable to true.
@@ -50,14 +50,14 @@ The simulation parameters can be found in the following directories:
 Dependencies can be installed via opening a shell within this repository's folder and running:
 
 ```sh
-  pip3 install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 The experiments can then be run via opening the notebook itself or via running:
 
 ```sh
-  jupyter nbconvert --to notebook --execute processing/CSAG_smart_irrigation.ipynb --output results/CSAG_smart_irrigation_results.ipynb
-  jupyter nbconvert --to notebook --execute processing/PID_Tuning.ipynb --output results/PID_Tuning.ipynb
+jupyter nbconvert --to notebook --execute processing/CSAG_smart_irrigation.ipynb --output results/CSAG_smart_irrigation_results.ipynb
+jupyter nbconvert --to notebook --execute processing/PID_Tuning.ipynb --output results/PID_Tuning.ipynb
 ```
 
 Alternatively, once the mandatory dependencies have been installed, notebooks can be run via a standard IDE (e.g., Visual Studio Code)
