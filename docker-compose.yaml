@@ -1,0 +1,13 @@
+version: "3"
+services:
+  pid_tuning:
+    image: mp4sini/pid_tuning
+    restart: no
+    volumes:
+      - "./data/experiments_data:/home/data/"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        chmod +x run_tuning.sh && \
+        ./run_tuning.sh
