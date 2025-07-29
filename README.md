@@ -16,7 +16,7 @@ The repository contains data and the processing pipeline to derive figures and s
 #### Data processing pipelines
 
 - `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures from raw field data.
-- `processing/PID_Tuning.ipynb: Python data pipeline` to reproduce the article's figures related to tuning Kp and Ki PID parameters on different soil textures.
+- `processing/PID_Tuning.ipynb`: Python data pipeline to reproduce the article's figures related to tuning Kp and Ki PID parameters on different soil textures.
 
 ### PID - KP and KI reference values
 
