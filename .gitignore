@@ -1,4 +1,7 @@
 output/
+!data/tuning/cloamy_pid_tuning/output
+!data/tuning/silty_pid_tuning/output
+!data/tuning/sandy_pid_tuning/output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
