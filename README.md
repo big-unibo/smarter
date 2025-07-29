@@ -35,7 +35,10 @@ The Criteria2D repository and experiments setup have been packed in a Docker ima
 docker compose up
 ```
 
-Simulation results for each scenario will be available in the `data/experiments_data/{scenario}/output` folder. Finally, to visualize such results, open the `processing/PID_Tuning.ipynb` notebook and change the value of the VISUALIZE_EXPERIMENTS variable to true.
+Simulation results for each scenario will be available in the `data/experiments_data/{scenario}/output` folder.
+
+#### Visualize experimenst results 
+Finally, to visualize such results, open the `processing/PID_Tuning.ipynb` notebook and change the value of the VISUALIZE_EXPERIMENTS variable to true.
 
 The simulation parameters can be found in the following directories:
 
