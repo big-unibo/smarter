@@ -11,7 +11,7 @@ The repository contains data and the processing pipeline to derive figures and s
 #### Data
 
 - `data/field_data`: sensor data collected during the irrigation seasons.
-- `data/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
+- `data/tuning`: synthetic data obtained through running Auto-ML simulations on CRITERIA-2D [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
 
 #### Data processing pipelines
 
@@ -28,7 +28,7 @@ The experiments need Python > 3 to run and some additional dependencies that can
 
 ### Data Generation
 
-Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and [CRITERIA-2D](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning).
+Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and CRITERIA-2D (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)).
 The Criteria2D repository and experiments setup have been packed in a Docker image runnable within this repository by opening a shell on this project root directory and running:
 
 ```sh
