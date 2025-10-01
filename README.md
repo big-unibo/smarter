@@ -10,26 +10,26 @@ The repository contains data and the processing pipeline to derive figures and s
 
 #### Data
 
-- `data/field_data`: sensor data extracted for evaluating SMARTER.
-- `data/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning). The data within this folder was leveraged in determining starting values for Kp, Ki in different soil textures.
+- `data/field_data`: sensor data collected during the irrigation seasons.
+- `data/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
 
 #### Data processing pipelines
 
-- `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures from raw field data.
-- `processing/PID_Tuning.ipynb`: Python data pipeline to reproduce the article's figures related to tuning Kp and Ki PID parameters on different soil textures.
+- `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures and statistics from raw field data.
+- `processing/PID_Tuning.ipynb`: Python data pipeline to reproduce the paper's figures related to tuning Kp and Ki PID parameters on different soil textures.
 
 ### PID - KP and KI reference values
 
-- `docker-compose.yaml`: Docker compose file to run in order to reproduce the experiments for obtaining reference values for KP and KI.
+- `docker-compose.yaml`: Docker compose file to reproduce the experiments for reference values of KP and KI.
 
 ## Reproduce Experiments
 
-The experiments need Python > 3 to run and some additional dependencies that can be found in `requirements.txt` file. There are two different ways to reproduce experiments.
+The experiments need Python > 3 to run and some additional dependencies that can be found in `requirements.txt` file. There are two different ways to reproduce experiments: via shell or via IDE (e.g., Visual Studio Code).
 
 ### Data Generation
 
-Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and [CRITERIA-2D](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning).
-The Criteria2D repository and experiments setup have been packed in a Docker image runnable within this repository by opening a shell on this project root directory and running:
+Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and CRITERIA-2D.
+The Criteria2D repository and experiments setup have been packed in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)) runnable within this repository by opening a shell on this project root directory and running:
 
 ```sh
 docker compose up
