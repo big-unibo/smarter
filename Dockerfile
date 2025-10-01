@@ -18,6 +18,7 @@ ENV PYTHONPATH="/src/:$PATH"
 ENV TZ="Europe/Rome"
 
 RUN echo "deb http://deb.debian.org/debian bookworm contrib non-free" > /etc/apt/sources.list.d/contrib.list
+RUN pip install ipykernel && python -m ipykernel install --user --name=devcontainer --display-name "Python (devcontainer)"
 
 RUN apt-get update
 RUN apt-get install -y fonts-dejavu
