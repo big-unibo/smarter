@@ -4,7 +4,19 @@ services:
     image: mp4sini/pid_tuning
     restart: no
     volumes:
-      - "./data/experiments_data:/home/data/"
+      - "./data/experiments_data/pid_tuning:/home/data/"
+    command:
+      - /bin/bash
+      - -c
+      - |
+        chmod +x run_tuning.sh && \
+        ./run_tuning.sh
+
+  smarter_robustness:
+    image: mp4sini/smarter_robustness
+    restart: no
+    volumes:
+      - "./data/experiments_data/robustness:/home/statistics/"
     command:
       - /bin/bash
       - -c
