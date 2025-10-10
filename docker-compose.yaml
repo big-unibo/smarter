@@ -21,5 +21,7 @@ services:
       - /bin/bash
       - -c
       - |
+        sudo apt install dos2unix
+        dos2unix run_evaluation.sh
         chmod +x run_evaluation.sh && \
         ./run_evaluation.sh
