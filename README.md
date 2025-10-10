@@ -11,7 +11,7 @@ The repository contains data and the processing pipeline to derive figures and s
 #### Data
 
 - `data/field_data`: sensor data collected during the irrigation seasons.
-- `data/experiments/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
+- `data/experiments/pid_tuning/results/`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
 - `data/experiments/robustness`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in assessing the robustness of SMARTER in different agricultural scenarios (different soil textures and irrigation frequnecies) and for comparing SMARTER with established precision irrigation techinques (ET0-based, Machine Learning-based)
   
 #### Data processing pipelines
@@ -37,15 +37,15 @@ Experiments for reference values for KP and KP parameters within different soil 
 docker compose up
 ```
 
-Simulation results for each scenario will be available in the `data/experiments/tuning/{scenario}/output` folder.
+Simulation results for each scenario will be available in the `data/experiments/pid_tuning/results/{scenario}/output` folder.
 
 #### Visualize experimenst results 
 Finally, to visualize such results, run the `processing/PID_Tuning.ipynb` notebook.
 
 The simulation parameters can be found in the following directories:
 
-- <b>Soil, crop and field parameters</b>: `data/experiments/{scenario}/data/{scenario}_{year}/settings`;
-- <b>Weather parameters</b>: `data/experiments_data/{scenario}/data/{scenario}_{year}/meteo`.
+- <b>Soil, crop and field parameters</b>: `data/experiments/pid_tuning_setup/{scenario}/data/{scenario}_{year}/settings`;
+- <b>Weather parameters</b>: `data/experiments/pid_tuning_setup/{scenario}/data/{scenario}_{year}/meteo`.
 
 
 ### Data visualization
