@@ -18,6 +18,8 @@ The repository contains data and the processing pipeline to derive figures and s
 
 - `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures and statistics from raw field data.
 - `processing/PID_Tuning.ipynb`: Python data pipeline to reproduce the paper's figures related to tuning Kp and Ki PID parameters on different soil textures.
+- `processing/ML_Training.ipynb`: Python data pipeline to reproduce the training of Gradient Boost Regression Trees models leveraged in the robustness tests.
+- `processing/SMARTER_robustness.ipynb`: Python data pipeline to reproduce the paper's figures related to the robustness assessments of SMARTER.
 
 ### PID - KP and KI reference values
 
