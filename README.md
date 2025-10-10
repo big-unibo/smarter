@@ -11,8 +11,9 @@ The repository contains data and the processing pipeline to derive figures and s
 #### Data
 
 - `data/field_data`: sensor data collected during the irrigation seasons.
-- `data/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
-
+- `data/experiments/tuning`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in determining reference values for KP, KI in different scenarios (e.g., soil textures).
+- `data/experiments/robustness`: synthetic data obtained through running Auto-ML simulations on [CRITERIA-2D]([https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning](https://github.com/ftomei/CRITERIA-2D)). The data within this folder was leveraged in assessing the robustness of SMARTER in different agricultural scenarios (different soil textures and irrigation frequnecies) and for comparing SMARTER with established precision irrigation techinques (ET0-based, Machine Learning-based)
+  
 #### Data processing pipelines
 
 - `processing/CSAG_smart_irrigation.ipynb`: Python data pipeline to reproduce the article's figures and statistics from raw field data.
@@ -20,7 +21,7 @@ The repository contains data and the processing pipeline to derive figures and s
 
 ### PID - KP and KI reference values
 
-- `docker-compose.yaml`: Docker compose file to reproduce the experiments for reference values of KP and KI.
+- `docker-compose.yaml`: Docker compose file to reproduce the experiments for reference values of KP and KI and to run robustness tests.
 
 ## Reproduce Experiments
 
@@ -29,20 +30,21 @@ The experiments need Python > 3 to run and some additional dependencies that can
 ### Data Generation
 
 Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and CRITERIA-2D.
-The Criteria2D repository and experiments setup have been packed in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)) runnable within this repository by opening a shell on this project root directory and running:
+- The Criteria2D repository and experiments setup for tuning KP and KI have been packed in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)) runnable within this repository by opening a shell on this project root directory and running:
+- The Criteria2D repository and experiments setup for assessing SMARTER robustness and performances against other precision irrigation techniques have been packed in a docker image in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/irrigation_strategies_comparison)) runnable within this repository by opening a shell on this project root directory and running:
 
 ```sh
 docker compose up
 ```
 
-Simulation results for each scenario will be available in the `data/experiments_data/{scenario}/output` folder.
+Simulation results for each scenario will be available in the `data/experiments/tuning/{scenario}/output` folder.
 
 #### Visualize experimenst results 
-Finally, to visualize such results, open the `processing/PID_Tuning.ipynb` notebook and change the value of the VISUALIZE_EXPERIMENTS variable to true.
+Finally, to visualize such results, run the `processing/PID_Tuning.ipynb` notebook.
 
 The simulation parameters can be found in the following directories:
 
-- <b>Soil, crop and field parameters</b>: `data/experiments_data/{scenario}/data/{scenario}_{year}/settings`;
+- <b>Soil, crop and field parameters</b>: `data/experiments/{scenario}/data/{scenario}_{year}/settings`;
 - <b>Weather parameters</b>: `data/experiments_data/{scenario}/data/{scenario}_{year}/meteo`.
 
 
