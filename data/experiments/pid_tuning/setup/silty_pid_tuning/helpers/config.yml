@@ -1,0 +1,81 @@
+years:
+      2021:
+          start: 1625961600
+          end: 1628636400
+          field_name: Fondo ERRANO
+          plant_row: T1 basso
+      2022:
+          start: 1655938800
+          end: 1658530800
+          field_name: Fondo ERRANO
+          plant_row: T1 basso
+      2023:
+          start: 1687474800
+          end: 1690066800
+          field_name: Fondo Errano_T1 Basso_2023
+          plant_row: T1 basso
+      2024:
+          field_name: Fondo Errano 2024
+          plant_row: T1 basso
+          start: 1719097200
+          end: 1721689200
+queries:
+  air_humidity:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, avg(value) AS air_humidity
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'AIR_HUM'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc
+
+  air_temperature:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, avg(value) AS air_temperature
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'AIR_TEMP'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc
+
+  wind_speed:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, avg(value) AS wind_speed
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'WIND_SPEED'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc
+
+  solar_radiation:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, avg(value) AS solar_radiation
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'SOLAR_RAD'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc
+
+  precipitation:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, SUM(value) AS precipitation
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'PLUV_CURR'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc
+
+  irrigation:
+    query: SELECT DISTINCT EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint AS timestamp, 0 AS irrigation
+            FROM view_data_original
+            WHERE "fieldName" = {field_name}
+            AND "plantRow" = {plant_row}
+            AND "detectedValueTypeId" = 'AIR_HUM'
+            AND timestamp BETWEEN {start} AND {end}
+            GROUP BY EXTRACT(EPOCH FROM DATE_TRUNC('hour', to_timestamp(timestamp)))::bigint
+            order by timestamp asc

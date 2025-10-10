@@ -2,9 +2,9 @@ version: "3"
 services:
   pid_tuning:
     image: mp4sini/pid_tuning
-    restart: no
+    restart: on-failure
     volumes:
-      - "./data/experiments_data/pid_tuning:/home/data/"
+      - "./data/experiments/pid_tuning/setup:/home/data/"
     command:
       - /bin/bash
       - -c
@@ -14,12 +14,12 @@ services:
 
   smarter_robustness:
     image: mp4sini/smarter_robustness
-    restart: no
+    restart: on-failure
     volumes:
-      - "./data/experiments_data/robustness:/home/statistics/"
+      - "./data/experiments/robustness:/home/statistics/"
     command:
       - /bin/bash
       - -c
       - |
-        chmod +x run_tuning.sh && \
-        ./run_tuning.sh
+        chmod +x run_evaluation.sh && \
+        ./run_evaluation.sh
