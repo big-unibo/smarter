@@ -21,9 +21,13 @@ The repository contains data and the processing pipeline to derive figures and s
 - `processing/ML_Training.ipynb`: Python data pipeline to reproduce the training of Gradient Boost Regression Trees models leveraged in the robustness tests.
 - `processing/SMARTER_robustness.ipynb`: Python data pipeline to reproduce the paper's figures related to the robustness assessments of SMARTER.
 
-### PID - KP and KI reference values
+### PI Controller - KP and KI reference values
 
 - `docker-compose.yaml`: Docker compose file to reproduce the experiments for reference values of KP and KI and to run robustness tests.
+
+### PI Controller - Assessing SMARTER robustness
+
+- `docker-compose.yaml`: Docker compose file to reproduce the experiments for assessing the robustness of SMARTER and comparing it with two different irrigation strategies: evapotranspiration based (ET0) and machine learning based (Gradient Boost Regression Trees).
 
 ## Reproduce Experiments
 
