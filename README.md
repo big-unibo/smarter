@@ -36,8 +36,8 @@ The experiments need Python > 3 to run and some additional dependencies that can
 ### Data Generation
 
 Experiments for reference values for KP and KP parameters within different soil textures scenarios (clay-loam, silty-loam, sandy-loam) can be reproduced through Docker and Orchard-3DLab.
-- The Criteria2D repository and experiments setup for tuning KP and KI have been packed in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)) runnable within this repository by opening a shell on this project root directory and running:
-- The Criteria2D repository and experiments setup for assessing SMARTER robustness and performances against other precision irrigation techniques have been packed in a docker image in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/irrigation_strategies_comparison)) runnable within this repository by opening a shell on this project root directory and running:
+- The Orchard-3DLab repository and experiments setup for tuning KP and KI have been packed in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/pid_tuning)) runnable within this repository by opening a shell on this project root directory and running:
+- The Orchard-3DLab repository and experiments setup for assessing SMARTER robustness and performances against other precision irrigation techniques have been packed in a docker image in a Docker image (the original repository is available at this link [this link](https://github.com/ManuelePasini/synthetic-soil-simulator/tree/irrigation_strategies_comparison)) runnable within this repository by opening a shell on this project root directory and running:
 
 ```sh
 docker compose up
