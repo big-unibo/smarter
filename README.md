@@ -2,7 +2,7 @@
 
 This repository contains the implementation of the following research paper:
 
-- Baiardi Alex, Francia Matteo, Golfarelli Matteo, and Pasini Manuele. "Prescriptive Watering: Data-Driven Optimization of Water Consumption in Kiwifruit Orchards". Submitted to **Computers and Electronics in Agriculture** (2025) 
+- Baiardi Alex, Francia Matteo, Golfarelli Matteo, Pasini Manuele, and Alessandro Papadoupolos. "Prescriptive Watering: Data-Driven Optimization of Water Consumption in Kiwifruit Orchards". Submitted to **Computers and Electronics in Agriculture** (2025) 
 
 ## Repository Description
 
